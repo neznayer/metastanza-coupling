@@ -41,6 +41,13 @@
       "stanza:example": 400,
       "stanza:description": "Height",
       "stanza:required": true
+    },
+    {
+      "stanza:key": "is-coupled",
+      "stanza:type": "boolean",
+      "stanza:example": false,
+      "stanza:description": "Couple to another stanza",
+      "stanza:required": true
     }
   ],
   "stanza:menu-placement": "bottom-right",
