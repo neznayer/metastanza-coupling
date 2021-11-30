@@ -16,6 +16,8 @@ export default class Sunburst extends Stanza {
   }
 
   async render() {
+    const dispatcher = this.element.dispatchEvent;
+
     appendCustomCss(this, this.params["custom-css-url"]);
     // get value of css vars
     const css = (key) => getComputedStyle(this.element).getPropertyValue(key);
@@ -24,6 +26,7 @@ export default class Sunburst extends Stanza {
     const height = this.params["height"];
     const colorScale = [];
 
+    //TODO add is-coupled flag
     const borderWidth = this.params["gap-width"] || 2;
     const nodesGapWidth = this.params["nodes-gap-width"] || 8;
     const cornerRadius = this.params["nodes-corner-radius"] || 0;
@@ -78,11 +81,11 @@ export default class Sunburst extends Stanza {
       scalingMethod,
     };
 
-    draw(sunburstElement, filteredData, opts);
+    draw(sunburstElement, filteredData, opts, dispatcher);
   }
 }
 
-function draw(el, dataset, opts) {
+function draw(el, dataset, opts, dispatcher = null) {
   let { depthLim } = opts;
 
   const {
@@ -334,6 +337,11 @@ function draw(el, dataset, opts) {
 
     parent.datum(p.parent || root);
 
+    dispatcher(
+      new CustomEvent("selectedDatumChanged", {
+        detail: { d: p.parent || root },
+      })
+    );
     parent.attr("cursor", (d) => (d === root ? "auto" : "pointer"));
 
     root.each(
