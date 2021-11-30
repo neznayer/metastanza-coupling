@@ -1,0 +1,118 @@
+// Load the repository-wide global style here. The actual file is located at ../common.scss for details.
+@use "@/common.scss";
+
+// The following is just an example. Feel free to modify it.
+// --greeting-color and --greeting-align are style variables, which are defined in metadata.json.
+main {
+  padding: 1rem 2rem;
+}
+
+#breadcrumbs {
+  position: relative;
+}
+.container {
+  position: relative;
+}
+
+.breadcrumb-node {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  background-color: #c5c5c5;
+  padding: 0 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .node-dropdown-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.1em;
+    width: 15px;
+    height: 15px;
+    transition: all 200ms ease;
+
+    &:hover {
+      background-color: #fdfdfd;
+      cursor: pointer;
+    }
+
+    &:focus {
+      background-color: #fdfdfd;
+      cursor: pointer;
+    }
+
+    .node-dropdown {
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 3px solid black;
+      //border-bottom: 3px solid transparent;
+
+      cursor: pointer;
+      transform: scaleX(0.7);
+    }
+  }
+
+  .node-forward {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px black solid;
+    margin-left: 0.2em;
+  }
+}
+
+.node-label {
+  display: inline-block;
+  font-size: 10px;
+  margin-right: 0.1em;
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: #fdfdfd;
+  }
+  span {
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover {
+      background-color: #fdfdfd;
+    }
+  }
+}
+
+.node-dropdown-menu {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  width: 7em;
+  background-color: #c5c5c5;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 0.2em;
+    &:first-child {
+      margin-top: 0.2em;
+    }
+    &:hover {
+      background-color: #e6e6e6;
+      cursor: pointer;
+    }
+
+    span {
+      display: block;
+      margin-left: 0.4em;
+      margin-right: 0.4em;
+      font-size: 8px;
+    }
+  }
+}
