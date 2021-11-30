@@ -52,6 +52,7 @@
   ],
   "stanza:menu-placement": "bottom-right",
   "stanza:style": [],
+
   "stanza:incomingEvent": [
     {
       "stanza:key": "selectedDatumChanged",

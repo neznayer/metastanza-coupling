@@ -16,7 +16,7 @@ export default class Sunburst extends Stanza {
   }
 
   async render() {
-    const dispatcher = this.element.dispatchEvent;
+    const dispatcher = this.element;
 
     appendCustomCss(this, this.params["custom-css-url"]);
     // get value of css vars
@@ -337,7 +337,7 @@ function draw(el, dataset, opts, dispatcher = null) {
 
     parent.datum(p.parent || root);
 
-    dispatcher(
+    dispatcher.dispatchEvent(
       new CustomEvent("selectedDatumChanged", {
         detail: { d: p.parent || root },
       })
