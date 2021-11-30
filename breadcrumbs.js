@@ -7,6 +7,7 @@ class Breadcrumbs extends Stanza {
       downloadPngMenuItem(this, "tree"),
     ];
   }
+
   handleEvent(event) {
     console.log(event);
   }
