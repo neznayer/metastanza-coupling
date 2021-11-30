@@ -17,7 +17,9 @@ export default class Breadcrumbs extends Stanza {
   }
 
   handleEvent(event) {
-    console.log(event);
+    // here d is id, not all datum
+
+    this.currentDataId = event.detail.id;
   }
 
   async render() {
@@ -68,13 +70,13 @@ export default class Breadcrumbs extends Stanza {
       width,
       height,
     };
-    renderElement(el, filteredData, opts, dispatcher);
+    renderElement(el, filteredData, opts, dispatcher, this.currentDataId);
   }
 }
 
 let showingD;
 
-function renderElement(el, data, opts, dispatcher = null) {
+function renderElement(el, data, opts, dispatcher = null, currentDataId = 1) {
   const nestedData = d3
     .stratify()
     .id((d) => d.id)
@@ -92,10 +94,10 @@ function renderElement(el, data, opts, dispatcher = null) {
     return item.data.data.id === 6;
   });
 
-  const getCurrentData = (d) => {
+  const getCurrentData = (id) => {
     return hierarchyData
       .find((item) => {
-        return item === d;
+        return item.data.data.id === id;
       })
       .ancestors()
       .reverse();
@@ -201,5 +203,6 @@ function renderElement(el, data, opts, dispatcher = null) {
     // }
   }
 
-  update(getCurrentData(currenData));
+  console.log("currentDataId: ", currentDataId);
+  update(getCurrentData(currentDataId));
 }
