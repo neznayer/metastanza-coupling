@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Breadcrumbs</title>
+
+    <script type="module" src="./breadcrumbs.js" async></script>
+
+    <script type="module">
+      import createHelpApp from './-togostanza/help-app.js';
+
+      const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"breadcrumbs","stanza:label":"Breadcrumbs","stanza:definition":"Breadcrumbs MetaStanza ","stanza:type":"Stanza","stanza:provider":"TogoStanza","stanza:license":"MIT","stanza:author":"Anton Zhuravlev","stanza:address":"anton@penqe.com","stanza:contributor":[],"stanza:created":"2021-11-26","stanza:updated":"2021-11-26","stanza:parameter":[{"stanza:key":"data-url","stanza:example":"https://raw.githubusercontent.com/togostanza/togostanza-data/main/samples/json/tree-data.json","stanza:description":"Data source URL","stanza:required":true},{"stanza:key":"data-type","stanza:type":"single-choice","stanza:choice":["json","tsv","csv","sparql-results-json"],"stanza:example":"json","stanza:description":"Data type","stanza:required":true},{"stanza:key":"width","stanza:type":"number","stanza:example":400,"stanza:description":"Width","stanza:required":true},{"stanza:key":"height","stanza:type":"number","stanza:example":400,"stanza:description":"Height","stanza:required":true},{"stanza:key":"is-coupled","stanza:type":"boolean","stanza:example":false,"stanza:description":"Couple to another stanza","stanza:required":true}],"stanza:menu-placement":"bottom-right","stanza:style":[],"stanza:incomingEvent":[{"stanza:key":"selectedDatumChanged","stanza:description":"event, wich dispatches when user selects some node in other stanza"}],"stanza:outgoingEvent":[{"stanza:key":"selectedDatumChanged","stanza:description":"event, wich dispatches when user selects some node"}]};
+      const readme   = "<h1>Breadcrumbs</h1>\n<p>Stanza description goes here. Edit <code>stanzas/breadcrumbs/README.md</code> to update.</p>\n";
+
+      createHelpApp({metadata, readme}).mount('body');
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+/*
+
+You can set up a global style here that is commonly used in each stanza.
+
+Example:
+
+h1 {
+  font-size: 24px;
+}
+
+*/
+main {
+  padding: 1rem 2rem;
+}
+
+#breadcrumbs {
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.breadcrumb-node {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  background-color: #c5c5c5;
+  padding: 0 5px;
+}
+.breadcrumb-node:last-child {
+  margin-right: 0;
+}
+.breadcrumb-node .node-dropdown-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.1em;
+  width: 15px;
+  height: 15px;
+  transition: all 200ms ease;
+}
+.breadcrumb-node .node-dropdown-container:hover {
+  background-color: #fdfdfd;
+  cursor: pointer;
+}
+.breadcrumb-node .node-dropdown-container:focus {
+  background-color: #fdfdfd;
+  cursor: pointer;
+}
+.breadcrumb-node .node-dropdown-container .node-dropdown {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid black;
+  cursor: pointer;
+  transform: scaleX(0.7);
+}
+.breadcrumb-node .node-forward {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px black solid;
+  margin-left: 0.2em;
+}
+
+.node-label {
+  display: inline-block;
+  font-size: 10px;
+  margin-right: 0.1em;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.node-label:hover {
+  background-color: #fdfdfd;
+}
+.node-label span {
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.node-label span:hover {
+  background-color: #fdfdfd;
+}
+
+.node-dropdown-menu {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  width: 7em;
+  background-color: #c5c5c5;
+}
+.node-dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 0.2em;
+}
+.node-dropdown-menu-item:first-child {
+  margin-top: 0.2em;
+}
+.node-dropdown-menu-item:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.node-dropdown-menu-item span {
+  display: block;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  font-size: 8px;
+}

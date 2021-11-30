@@ -1,0 +1,63 @@
+/*
+
+You can set up a global style here that is commonly used in each stanza.
+
+Example:
+
+h1 {
+  font-size: 24px;
+}
+
+*/
+main {
+  padding: 1rem 2rem;
+}
+
+#sunburst textPath {
+  pointer-events: none;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+#sunburst .labels {
+  font-family: var(--togostanza-label-font-family);
+  font-size: var(--togostanza-label-font-size);
+  font-weight: var(--togostanza-label-font-weight);
+  fill: var(--togostanza-label-font-color);
+  text-shadow: -1px -1px 0 var(--togostanza-label-text-outline), 1px -1px 0 var(--togostanza-label-text-outline), -1px 1px 0 var(--togostanza-label-text-outline), 1px 1px 0 var(--togostanza-label-text-outline);
+}
+
+#sunburst .numbers {
+  font-family: var(--togostanza-number-label-font-family);
+  font-size: var(--togostanza-number-label-font-size);
+  font-weight: var(--togostanza--number-label-font-weight);
+  fill: var(--togostanza-number-label-font-color);
+}
+
+#sunburst g .hidden-arc {
+  fill: none;
+  stroke: none;
+}
+
+#sunburst .color-1 {
+  fill: var(--togostanza-colorscheme-color1);
+}
+#sunburst .color-2 {
+  fill: var(--togostanza-colorscheme-color2);
+}
+#sunburst .color-3 {
+  fill: var(--togostanza-colorscheme-color3);
+}
+#sunburst .color-4 {
+  fill: var(--togostanza-colorscheme-color4);
+}
+#sunburst .color-5 {
+  fill: var(--togostanza-colorscheme-color5);
+}
+#sunburst .color-6 {
+  fill: var(--togostanza-colorscheme-color6);
+}
+
+#sunburst .no-fill {
+  fill: none;
+}
