@@ -19,7 +19,8 @@ export default class Breadcrumbs extends Stanza {
   handleEvent(event) {
     // here d is id, not all datum
 
-    this.currentDataId = event.detail.id;
+    console.log("event: ", event);
+    //this.currentDataId = event.detail.id;
   }
 
   async render() {
