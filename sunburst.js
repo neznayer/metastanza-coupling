@@ -1336,7 +1336,7 @@ function draw(el, dataset, opts, dispatcher = null) {
 
     dispatcher.dispatchEvent(
       new CustomEvent("selectedDatumChanged", {
-        detail: { id: p.parent.data.data.id || root.data.data.id },
+        detail: { id: p.parent?.data.data.id || root.data?.data.id },
       })
     );
     parent.attr("cursor", (d) => (d === root ? "auto" : "pointer"));
